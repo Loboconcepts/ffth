@@ -214,9 +214,7 @@ gulp.task( 'dist', ['clean-dist'], function() {
   .pipe( replace( '/js/jquery.slim.min.js', '/js' + paths.vendor + '/jquery.slim.min.js', { 'skipBinary': true } ) )
   .pipe( replace( '/js/popper.min.js', '/js' + paths.vendor + '/popper.min.js', { 'skipBinary': true } ) )
   .pipe( replace( '/js/skip-link-focus-fix.js', '/js' + paths.vendor + '/skip-link-focus-fix.js', { 'skipBinary': true } ) )
-  .pipe(mustache({
-        nameVersion: "FFBeyond1.0"
-    }))
+  .pipe( replace( '{{nameVersion}}','FFBeyond1.0' ))
     .pipe( gulp.dest( paths.dist ) );
 });
 
