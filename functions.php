@@ -42,7 +42,7 @@ function team_field( $user ) { ?>
     <tr>
         <th><label for="teamName"><?php _e("Team Name"); ?></label></th>
         <td>
-            <input type="text" name="teamName" id="teamName" value="<?php echo esc_attr( get_the_author_meta( 'teamName', $user->ID ) ); ?>" class="regular-text" />
+            <input autocomplete="off"  type="text" name="teamName" id="teamName" value="<?php echo esc_attr( get_the_author_meta( 'teamName', $user->ID ) ); ?>" class="regular-text" />
         </td>
     </tr>
     </table>
@@ -56,7 +56,7 @@ function league_field( $user ) { ?>
     <tr>
         <th><label for="league"><?php _e("League Name"); ?></label></th>
         <td>
-            <input type="text" name="league" id="league" value="<?php echo esc_attr( get_the_author_meta( 'league', $user->ID ) ); ?>" class="regular-text" />
+            <input autocomplete="off"  type="text" name="league" id="league" value="<?php echo esc_attr( get_the_author_meta( 'league', $user->ID ) ); ?>" class="regular-text" />
         </td>
     </tr>
     </table>
@@ -70,10 +70,14 @@ function team_list_field( $user ) { ?>
     <tr>
         <th><label for="teamList"><?php _e("Team List"); ?></label></th>
         <td>
-            <textarea name="teamList" id="teamList" value="<?php echo esc_attr( get_the_author_meta( 'teamList', $user->ID ) ); ?>" class="regular-text" ></textarea>
+            <textarea autocomplete="off"  name="teamList" id="teamList" value="<?php echo esc_attr( get_the_author_meta( 'teamList', $user->ID ) ); ?>" class="regular-text" ></textarea>
         </td>
     </tr>
     </table>
+<?php }
+
+function create_league_and_change_league( $user ) { ?>
+
 <?php }
 
 add_action( 'personal_options_update', 'save_extra_user_profile_fields' );
